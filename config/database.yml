@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  schema_search_path: "public,salesforce"
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: messager_development
+
+test:
+  <<: *default
+  database: messager_test

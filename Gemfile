@@ -8,6 +8,7 @@ gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'pg'
+gem 'pry'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -33,7 +34,7 @@ gem 'devise'
 gem 'emoji'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 
-
+gem 'gemoji'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

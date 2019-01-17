@@ -18,3 +18,6 @@
 //= require jquery_ujs
 //= require cable
 //= require turbolinks
+//= require jquery3
+//= require popper
+//= require bootstrap

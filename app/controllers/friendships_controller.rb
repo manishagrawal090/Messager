@@ -14,7 +14,7 @@
 	end
 
 	def update
-	@friendship = Friendship.find_by(id: params[:id])
+	@friendship = Friendship.find_by(user_id: params[:id])
 	@friendship.update(accepted: true)
 	  if @friendship.save
 	    redirect_to root_url, notice: "Successfully confirmed friend!"
@@ -23,8 +23,9 @@
 	  end
 	end
 
+
 	def destroy
-	  @friendship = Friendship.find_by(id: params[:id])
+	  @friendship = Friendship.find_by(user_id: params[:id])
 	  @friendship.destroy
 	  flash[:notice] = "Removed friendship."
 	  redirect_back fallback_location: root_path

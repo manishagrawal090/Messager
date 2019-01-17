@@ -8,8 +8,8 @@ default: &default
 
 development:
   <<: *default
-  database: messager_development
+  database: messanger_development
 
 test:
   <<: *default
-  database: messager_test
+  database: messanger_test

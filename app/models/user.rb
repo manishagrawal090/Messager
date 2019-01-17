@@ -27,11 +27,10 @@ class User < ApplicationRecord
     active_friends | received_friends
   end
 
-# to call your pending sent or received
-
   def pending
     pending_friends | requested_friendships
   end
+
 
   def name
     email.split('@')[0]

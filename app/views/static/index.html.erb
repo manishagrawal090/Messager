@@ -4,7 +4,7 @@
 <h4>Your friends listed:</h4>
 <ul>
   	<% @users.each do |user| %>
-  		<% unless user == current_user || user == current_user && user.pending == true  %>          
+  		<% unless user == current_user || user == current_user && user.pending == true %>          
         <% if !current_user.contacted?(user) %>
           <li>
     				<%= user.name %> 

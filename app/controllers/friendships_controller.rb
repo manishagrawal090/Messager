@@ -14,7 +14,6 @@
 	end
 
 	def update
-		binding.pry
 	@friendship = Friendship.find_by(user_id: params[:id],friend_id: params[:friend_id])
 	@friendship.update(accepted: true)
 	  if @friendship.save

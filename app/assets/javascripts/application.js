@@ -11,13 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-
-//= require conversations
-
-//= require jquery2
 //= require jquery_ujs
 //= require cable
 //= require turbolinks
-//= require jquery3
-//= require popper
-//= require bootstrap
+
+

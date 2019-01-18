@@ -1,7 +1,5 @@
 <% current_user.friends.each do |user| %>
-	<li> 
-  	<%= user.name %> | <%= link_to 'send a message', new_personal_message_path(receiver_id: user) %>
-  </li>
-<% end %>
-
-
+<li>
+  <%= user.name %> | <%= link_to 'send a message', new_personal_message_path(receiver_id: user) %>
+</li>
+<%end%>

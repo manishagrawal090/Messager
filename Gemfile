@@ -35,6 +35,7 @@ gem 'emoji'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 
 gem 'gemoji'
+gem 'redis'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

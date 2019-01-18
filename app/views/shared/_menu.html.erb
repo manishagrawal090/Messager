@@ -1,4 +1,3 @@
-
 <% flash.each do |key, value| %>
   <div>
     <%= value %>
@@ -14,9 +13,9 @@
 		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
 				<% if user_signed_in? %>
-				  <p>WELCOME  <%= current_user.name %></p>
+  				<div id="current-user"></div>
+  					<p>Welcome  <%= current_user.name %> | <%= link_to 'log out', destroy_user_session_path, method: :delete %></p>
 				<% end %>
-			</li>
 		</ul>
 	
 		<form class="form-inline my-2 my-lg-0">
@@ -33,9 +32,4 @@
   <%= link_to 'Groups', chat_rooms_path %>&nbsp;&nbsp;&nbsp;
 </ul>
 
-<% if user_signed_in? %>
-<p align='right'><%= link_to 'log out', destroy_user_session_path, method: :delete %></p>
-<% end %>
-
 </nav>
-

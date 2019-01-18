@@ -21,7 +21,13 @@ class User < ApplicationRecord
   has_many :pending_friends, -> { where(friendships: { accepted: false}) }, through: :friendships, source: :friend
   has_many :requested_friendships, -> { where(friendships: { accepted: false}) }, through: :received_friendships, source: :user
 
-# to call all your friends
+  def name
+    email.split('@')[0]
+  end
+
+  def online?
+    !Redis.new.get("user_#{self.id}_online").nil?
+  end
 
   def friends
     active_friends | received_friends
@@ -30,16 +36,6 @@ class User < ApplicationRecord
   def pending
     pending_friends | requested_friendships
   end
-
-
-  def name
-    email.split('@')[0]
-  end
-
-  def friends?(user)
-    self.friends.include?(user)
-  end
-
 
   def contacted?(user)
     friends?(user) || pending_friends?(user)
@@ -53,5 +49,3 @@ class User < ApplicationRecord
     self.pending.include?(user)
   end
 end
-
-
